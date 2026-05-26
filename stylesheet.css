@@ -1,6 +1,7 @@
 body{
   background-repeat: no-repeat;
   background-size: max(100vw, 200vh);
+  background-attachment: fixed;
 }
 
 table{
