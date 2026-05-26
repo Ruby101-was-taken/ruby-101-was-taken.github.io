@@ -29,7 +29,7 @@ h2{
 }
 
 .small_text {
-    font-size: xx-small;
+    font-size: medium;
 }
 
 button {
@@ -43,7 +43,7 @@ button {
     z-index: 1;
     background: grey;
     position: relative;
-    font-size: 17px;
+    font-size: 32px;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms;
