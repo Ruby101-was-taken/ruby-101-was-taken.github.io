@@ -12,15 +12,20 @@
             }
         </style>
         <script>
-            function HoverPiece(background){
+            function HoverPiece(background, headerBackgroundColour, headerBoarderColour, headerTextColour = '#000000'){
                document.body.style.backgroundImage = "url(" + background + ")"; 
+               document.getElementById("Header").style.backgroundColor = headerBackgroundColour;
+               document.getElementById("Header").style.borderColor = headerBoarderColour;
+               document.getElementById("Header").style.color = headerTextColour;
             }
         </script>
     <body>
-        <h1 style="text-align: center; text-shadow: 2px 2px white;">RUBY'S PORTFOLIO</h1>
+        <header id="Header">
+            <h1>RUBY'S PORTFOLIO</h1>
+        </header>
         <table>
             <tr>
-                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/Rat.png')">
+                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/Rat.png', '#535398', '#23233F', '#FFFFFF')">
                     <div>
                         <h2>Really Fast Rat</h2>
                         <p class="small_text">By Me</p>
@@ -31,7 +36,7 @@
                         <iframe src="https://www.youtube-nocookie.com/embed/22G_dXTtO6Q?&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </td>
-                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/ShipDrift.png')">
+                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/ShipDrift.png', '#386fc0', '#3859b3', '#FFFFFF')">
                     <div>
                         <h2>Ship Drift</h2>
                         <p class="small_text">By 3Bee</p>
@@ -48,7 +53,7 @@
             <tr>
             </tr>
             <tr>
-                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/Itch.png')">
+                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/Itch.png', '#cc2037', '#512f33', '#FFFFFF')">
                     <div>
                         <h2>ITCH.IO</h2>
                         <p class="small_text">By Me</p>
@@ -60,7 +65,7 @@
                         <p>I have several other games and demos on my itch, so feel free to check it out!</p>
                     </div>
                 </td>
-                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/Revolvium.png')">
+                <td class="portfolio_piece" onmouseover="HoverPiece('Assets/Backgrounds/Revolvium.png', '#edf7fc', '#979cff')">
                     <div>
                         <h2>Revolvium</h2>
                         <p class="small_text">By Really Ambitious Team (RAT)</p>
@@ -86,5 +91,6 @@
                 <td>Giovanni Rovelli</td>
             </tr>
         </table>
+        
     </body>
 </html>
