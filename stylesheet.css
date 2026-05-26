@@ -1,0 +1,91 @@
+body{
+  background-repeat: no-repeat;
+  background-size: max(100vw, 200vh);
+}
+
+table{
+    min-width: 80%;
+    border-collapse: collapse;
+    margin: 10%;
+    margin-top: 0%;
+}
+
+td{
+    max-width: 49%;
+    min-width: 49%;
+    min-height: 100%;
+    display:inline;
+    float:left;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    padding: 0%;
+    background-color: white;
+}
+
+h2{
+    margin-bottom: 0px;
+}
+
+.small_text {
+    font-size: xx-small;
+}
+
+button {
+    padding: 10px 20px;
+    padding-right: 40px;
+    border: unset;
+    border-radius: 15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: black;
+    z-index: 1;
+    background: grey;
+    position: relative;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    clip-path: polygon(
+        0% 0%,
+        80% 0%,
+        100% 50%,
+        80% 100%,
+        0% 100%
+    );
+    cursor: pointer;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #8f0404;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+
+button:hover {
+    color: #e8e8e8;
+    scale: 1.1;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+
+.portfolio_piece{
+    transition: all 250ms;
+}
+
+.portfolio_piece:hover{
+    scale: 1.1;
+}
