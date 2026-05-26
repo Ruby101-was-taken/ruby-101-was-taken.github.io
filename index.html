@@ -12,16 +12,40 @@
             }
         </style>
         <script>
+            var changeColours = true;
             function HoverPiece(background, headerBackgroundColour, headerBoarderColour, headerTextColour = '#000000'){
-               document.body.style.backgroundImage = "url(" + background + ")"; 
-               document.getElementById("Header").style.backgroundColor = headerBackgroundColour;
-               document.getElementById("Header").style.borderColor = headerBoarderColour;
-               document.getElementById("Header").style.color = headerTextColour;
+                if(changeColours){
+                    document.body.style.backgroundImage = "url(" + background + ")"; 
+                    document.getElementById("Header").style.backgroundColor = headerBackgroundColour;
+                    document.getElementById("Header").style.borderColor = headerBoarderColour;
+                    document.getElementById("Header").style.color = headerTextColour;
+                    
+                    document.getElementById("Footer").style.backgroundColor = headerBackgroundColour;
+                    document.getElementById("Footer").style.borderColor = headerBoarderColour;
+                    document.getElementById("Footer").style.color = headerTextColour;
+                }
+            }
+            function ToggleCanChangeColours(){
+                if(changeColours) {
+                    HoverPiece("", "#9D3B52", "#822D5C", "#ffffff");
+                }
+                changeColours = !changeColours;
             }
         </script>
     <body>
         <header id="Header">
             <h1>RUBY'S PORTFOLIO</h1>
+            <nav>
+                <p>Auto Colour Changes:
+                <label class="toggle">
+                    <input type="checkbox" id="btnToggle" name="btnToggle" />
+                    <span class="slider"></span>
+                </label>
+            </nav>
+
+            <script>
+                document.getElementById('btnToggle').addEventListener('click', (e) => ToggleCanChangeColours())
+            </script>
         </header>
         <table>
             <tr>
@@ -31,7 +55,7 @@
                         <p class="small_text">By Me</p>
                         <p>Really Fast Rat is a solo indie game I have been working on in my spare time between work and college assignments. It is a highspeed 2D platformer, where players aim to beat levels as fast as possible to get the best time!</p>
                         <p>It can be found on steam in early access, along side a fully filled out steam page.</p>
-                        <a href="https://store.steampowered.com/app/3806960/Really_Fast_Rat/"><button>See it here!</button></a>
+                        <a target="_blank" href="https://store.steampowered.com/app/3806960/Really_Fast_Rat/"><button>See it here!</button></a>
                         <p>I developed it by myself using a custom game engine built using the pygame framework. I also worked on all the marketing material, such as trailers. The focus of the game is to make a game centred around speed. This comes from players beating the levels fast to beat their best times, but also allowing casual players to go fast. Several sections of the levels allow all players of all skill levels get a sense of the speed.</p>
                         <iframe src="https://www.youtube-nocookie.com/embed/22G_dXTtO6Q?&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -43,7 +67,7 @@
                         <p>Ship Drift was my big final year project made for my college course. It was made with me and a team of 4 others. It is a rougelike game, where the player plays as "Skipper", who is working to save his fishing waters from a polluting international company.</p>
                         <p>For this project, I was the Team Lead, as well as the main Game Programmer and Game Designer. The game was concepted and developed over the course of 2 semesters.</p>
                         <p>Below you can find a mahara page documenting my contributions, or the team page with an full overview of the game.</p>
-                        <pre><a href="https://mahara.dkit.ie/view/view.php?id=143493"><button>Solo Page!</button></a>    <a href="https://mahara.dkit.ie/view/view.php?id=143531"><button>Team Page!</button></a></pre>
+                        <pre><a target="_blank" href="https://mahara.dkit.ie/view/view.php?id=143493"><button>Solo Page!</button></a>    <a target="_blank" href="https://mahara.dkit.ie/view/view.php?id=143531"><button>Team Page!</button></a></pre>
                         <p>The game was made using Unreal Engine 5.6.1 using the built in blueprints system. The game is endless, so the player is going for a best score. This is score is based on how many days they complete (as in game, each day is Skipper coming back to stop the company again). The in game level is randomised each run, as well as made more difficult. However, the player get buy upgrades for their ship to make their task easier!</p>
                         <p>I also made the trailer that can be seen below.</p>
                         <iframe src="https://www.youtube-nocookie.com/embed/3TQ8KpqaiMk?&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -58,9 +82,9 @@
                         <h2>ITCH.IO</h2>
                         <p class="small_text">By Me</p>
                         <p>My itch.io page contains most of the games I have ever made, or helped out on!</p>
-                        <a href="https://white-ruby.itch.io/"><button>See it here!</button></a>
+                        <a target="_blank" href="https://white-ruby.itch.io/"><button>See it here!</button></a>
                         <p>I have participated in several game jams, where developers make games in a short period of time with a specific theme, my best result being a game called Make A Game For Me.</p>
-                        <a href="https://white-ruby.itch.io/make-a-game-for-me"><button>See it here!</button></a>
+                        <a target="_blank" href="https://white-ruby.itch.io/make-a-game-for-me"><button>See it here!</button></a>
                         <p>This was a submission to the GMTK Game Jam 2023, where the theme was "Roles Reversed", so naturally, I made a game where the player had to make a game. It came 304th place overall (out of 6686 entries), and came 16th in the creativity category.</p>
                         <p>I have several other games and demos on my itch, so feel free to check it out!</p>
                     </div>
@@ -71,26 +95,74 @@
                         <p class="small_text">By Really Ambitious Team (RAT)</p>
                         <p>Revolvium was a team project made for my 3rd year Universal Design Project. It was made in a team with 3 other people. It is a puzzle game where the player much reach the end of the level by rotating pieces of it, like a puzzle cube.</p>
                         <p>For this project, I was also the team lead, as well as the lead programmer and game designer.</p>
-                        <a href="https://jakeoreilly.itch.io/revolvium"><button>See it here!</button></a>
+                        <a target="_blank" href="https://jakeoreilly.itch.io/revolvium"><button>See it here!</button></a>
                         <p>The game was made over the course of a single semester, and was made using the Unity Game Engine. The design goal for the game was to make something that could be played by everyone. The game has no timed inputs, no fail states, and no enemies or obstacles. The only thing between the player and the end is their own puzzle solving abilities.</p>
                         <p>Below you can see a demo that plays through the whole game!</p>
                         <iframe src="https://www.youtube-nocookie.com/embed/nWee35yosQ0?&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </td>
             </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-            </tr>
         </table>
         
+        <Footer id="Footer">
+            <table>
+                <tr>
+                    <th>
+                        <b>Contact</b>
+                    </th>
+                    <th>
+                        <b>Github</b>
+                    </th>
+                    <th>
+                        <b>Games</b>
+                    </th>
+                    <th>
+                        <b>Portfolio</b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        Email: <a target="_blank" href="mailto:contactrubreal@gmail.com">contactrubreal@gmail.com</a><br/>
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://github.com/Ruby101-was-taken">My Github</a>
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://store.steampowered.com/app/3806960/Really_Fast_Rat/">Really Fast Rat</a>
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://mahara.dkit.ie/user/view.php?id=14693">Mahara</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://github.com/Ruby101-was-taken/ruby-101-was-taken.github.io">Repo For This Website</a>
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://white-ruby.itch.io/ship-drift">Ship Drift</a>
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://white-ruby.itch.io/">Itch</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://jakeoreilly.itch.io/revolvium">Revolvium</a>
+                    </td>
+                    <td>
+                        <a target="_blank" href="https://store.steampowered.com/search/?developer=White%20Ruby">Steam</a>
+                    </td>
+                </tr>
+            </table>
+        </Footer>
     </body>
 </html>
