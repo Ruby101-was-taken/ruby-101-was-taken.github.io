@@ -5,7 +5,19 @@ body{
     margin-top: 0;
 }
 
+.mainBody{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
 table{
+    min-width: 100%;
+    border-collapse: collapse;
+    margin-top: 0%;
+    margin-bottom: 100px;
+}
+
+.footer_table{
     min-width: 80%;
     border-collapse: collapse;
     margin: 10%;
@@ -30,14 +42,12 @@ td{
 
 .portfolio_piece{
     transition: all 250ms;
-    max-width: 49%;
-    min-width: 49%;
+    max-width: 50%;
+    min-width: 50%;
     min-height: 100%;
     display:inline;
     float:left;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
+    outline: 2px solid black;
     text-align: center;
     padding: 0%;
     background-color: white;
@@ -49,6 +59,25 @@ td{
     scale: 1.1;
 }
 
+
+.portfolio_title{
+    transition: all 250ms;
+    display:inline;
+    float:left;
+    outline: 2px solid black;
+    text-align: center;
+    padding: 0%;
+    background-color: white;
+    animation-name: ScaleFromNothing;
+    animation-duration: 0.3s;
+    border-collapse: collapse;
+    margin-top: 0%;
+    margin-bottom: 0px;
+    max-width: 100%;
+    min-width: 100%;
+    line-height: 100px;
+}
+
 h2{
     margin-bottom: 0px;
 }
@@ -57,7 +86,7 @@ h2{
     font-size: medium;
 }
 
-button {
+.pointerButton {
     padding: 10px 20px;
     padding-right: 40px;
     border: unset;
@@ -83,7 +112,7 @@ button {
     cursor: pointer;
 }
 
-button::before {
+.pointerButton::before {
     content: "";
     position: absolute;
     top: 0;
@@ -97,12 +126,47 @@ button::before {
     transition: all 250ms
 }
 
-button:hover {
+.pointerButton:hover {
     color: #e8e8e8;
     scale: 1.1;
 }
 
-button:hover::before {
+.pointerButton:hover::before {
+    width: 100%;
+}
+.nav_button {
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-width: 0px;
+    color: white;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.658);
+    position: relative;
+    font-size: 32px;
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.nav_button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #ffffff;
+    z-index: -1;
+    transition: all 250ms
+}
+
+.nav_button:hover {
+    color: #000;
+    scale: 1.1;
+    border-radius: 30px;
+}
+
+.nav_button:hover::before {
     width: 100%;
 }
 
@@ -135,56 +199,18 @@ nav {
 
 
 footer {
-    background-color: #9D3B52;
+    background-color: rgba(255, 255, 255, 0.836);
     border: 5px solid #822D5C;
     border-bottom-width: 0px;
     padding-bottom: 1px;
-    color: white;
+    color: black;
     z-index: 100;
     margin-bottom: -200px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.toggle input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #333;
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #FFF;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #005204;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
+.togglebtn{
+    font-size: 20px;
+    margin-left: 20px;
 }
