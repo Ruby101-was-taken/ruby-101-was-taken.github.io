@@ -214,3 +214,15 @@ footer {
     font-size: 20px;
     margin-left: 20px;
 }
+
+
+.screenshot{
+    width: 80%;
+}
+
+.figure {
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 0%;
+    font-size: large;
+}
